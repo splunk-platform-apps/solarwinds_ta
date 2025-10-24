@@ -10,3 +10,5 @@ check_python_untrusted_xml_functions:
   comment: 'OK'
 check_for_supported_tls:
   comment: 'OK'
+check_for_binary_files_without_source_code:
+  comment: 'OK'

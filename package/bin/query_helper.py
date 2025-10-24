@@ -71,7 +71,6 @@ def stream_events(inputs: smi.InputDefinition, event_writer: smi.EventWriter):
             query = input_item.get("Query", "")
             checkpoint_field = input_item.get("checkpoint_field", "")
 
-
             query_formatted = query.replace(" ", "+")
             request_url = f"{server}/SolarWinds/InformationService/v3/Json/Query?query={query_formatted}"
             logger.debug(f"Query URL: {request_url}")

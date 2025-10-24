@@ -1,0 +1,13 @@
+name: Triage Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  call-workflow:
+    if: github.repository != 'splunk-platform-apps/template-addon'
+    uses: splunk-platform-apps/.github/.github/workflows/reusable-triage-issues.yml@1
+    with:
+      issue_number: ${{ github.event.issue.number }}
+      issue_labels: ${{ join(github.event.issue.labels.*.name, ',') }}

@@ -80,6 +80,10 @@ def stream_events(inputs: smi.InputDefinition, event_writer: smi.EventWriter):
             if response.status_code == 200:
                 data = response.json()["results"]
                 for event in data:
+                    if checkpoint_field not in event:
+                        raise Exception(
+                            f"{checkpoint_field} not found in the event: {event}"
+                        )
                     checkpoint = event[checkpoint_field]
                     if kvstore_checkpointer.get(checkpoint) is None:
                         event_writer.write_event(

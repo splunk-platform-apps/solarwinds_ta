@@ -40,8 +40,9 @@
                         },
                         {
                             "type": "text",
-                            "label": "Solarwinds Server",
+                            "label": "SolarWinds Server",
                             "field": "server",
+                            "help": "Enter the SolarWinds Orion hostname (e.g. my-server-name)",
                             "validators": [
                                 {
                                     "type": "string",
@@ -54,23 +55,9 @@
                         },
                         {
                             "type": "text",
-                            "label": "Solarwinds Port",
-                            "field": "port",
-                            "help": "Enter the SolarWinds Information Service (SWIS) port",
-                            "validators": [
-                                {
-                                    "type": "string",
-                                    "errorMsg": "Length of port should be between 1 and 8192",
-                                    "minLength": 1,
-                                    "maxLength": 8192
-                                }
-                            ],
-                            "required": false
-                        },
-                        {
-                            "type": "text",
                             "label": "Username",
                             "field": "username",
+                            "help": "Enter the username to authenticate at SolarWinds.",
                             "validators": [
                                 {
                                     "type": "string",
@@ -85,6 +72,7 @@
                             "type": "text",
                             "label": "Password",
                             "field": "password",
+                            "help": "Enter the password to authenticate at SolarWinds.",
                             "required": true,
                             "encrypted": true,
                             "validators": [
@@ -209,13 +197,13 @@
                             "label": "Query",
                             "field": "Query",
                             "defaultValue": "SELECT Caption AS NodeName, IPAddress FROM Orion.Nodes",
-                            "help": "Enter any SolarWinds query you would like Splunk to ingest"
+                            "help": "Enter any SolarWinds query you would like Splunk to ingest."
                         },
                         {
                             "type": "text",
                             "label": "Checkpoint Field",
                             "field": "checkpoint_field",
-                            "help": "Enter ONE field to use as the checkpoint",
+                            "help": "Enter ONE field to use as the checkpoint.",
                             "validators": [
                                 {
                                     "type": "string",
